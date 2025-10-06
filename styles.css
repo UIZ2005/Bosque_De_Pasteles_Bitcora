@@ -1,0 +1,54 @@
+h1 {
+    font-family: 'Gravitas One', cursive;
+    font-size: 3rem;
+    color: #f6f6f6;
+    /* ejemplo de color madera o fantasía */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   
+}
+
+.Header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(15, 132, 105);
+    color: rgb(255, 255, 255);
+    font-style: bold;
+    text-align: center;
+    align-content: flex-end;
+}
+
+.Contenedor_Inicio {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    /* toda la pantalla */
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* dos columnas iguales */
+    gap: 10px;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    /* cubre todo el fondo sin deformarse */
+    z-index: -1;
+    /* queda detrás del texto */
+}
+.title_Principal{
+    text-align: center;
+}
+.Modelado_nebula {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    display: block;
+    align-content: flex-end;
+}
