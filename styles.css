@@ -40,94 +40,295 @@ ul li a.active {
 }
 
 .Contenedor_Inicio {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    /* altura de la sección */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  /* altura de la sección */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 /* Capa borrosa (imagen real usada aquí) */
 .Contenedor_Inicio::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('img/Fondo2.png');
-    /* ruta de la imagen */
-    background-size: cover;
-    background-position: 50% 80%;
-    background-repeat: no-repeat;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('img/Fondo2.png');
+  /* ruta de la imagen */
+  background-size: cover;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 
 .Contenedor_Inicio::after {
-    content: "";
-    position: absolute;
-    bottom: 0PX;
-    width: 100%;
-    height: 80px;
-    /* tamaño del degradado */
-    background: linear-gradient(to bottom, transparent, #28919f);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  bottom: 0PX;
+  width: 100%;
+  height: 80px;
+  /* tamaño del degradado */
+  background: linear-gradient(to bottom, transparent, #28919f);
+  z-index: 1;
 }
 
-.info-game {
-    background-color: rgb(50, 49, 119, 0.927);
-    display: flex;
 
-    align-items: center; /* centra verticalmente */
-    justify-content: center; /* centra el conjunto en la página */
-    gap: 40px; /* espacio entre imagen y texto */
-    padding: 50px;
-    color: white;
+/* -----------------------------------------------------------------------------------------------------------------------*/
+
+
+.info-game {
+  background-color: rgb(50, 49, 119, 0.927);
+  display: flex;
+
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: center;
+  /* centra el conjunto en la página */
+  gap: 40px;
+  /* espacio entre imagen y texto */
+  padding: 50px;
+  color: white;
+  position: relative;
+  z-index: 0;
+
+}
+
+
+/* --- CAPA DE ARÁNDANOS --- */
+/* --- ARÁNDANOS --- */
+.info-game .berry {
+  position: absolute;
+  background: url('img/arandanoSi.png') no-repeat center/contain;
+  opacity: 0.7;
+  width: 80px;
+  height: 80px;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: auto;
+  /* necesario para hover */
+  z-index: 2;
+  /* ya NO -1 */
+}
+
+
+/* Efecto al pasar el mouse sobre cada arándano */
+.berry:hover {
+  transform: translateY(-20px) scale(1.2) rotate(10deg);
+  transition: transform 0.4s ease;
+}
+
+/* Posiciones dispersas */
+.berry:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  width: 70px;
+  animation-delay: 0s;
+}
+
+.berry:nth-child(2) {
+  top: 25%;
+  left: 70%;
+  width: 90px;
+  animation-delay: 1s;
+}
+
+.berry:nth-child(3) {
+  top: 55%;
+  left: 30%;
+  width: 60px;
+  animation-delay: 2s;
+}
+
+.berry:nth-child(4) {
+  top: 75%;
+  left: 80%;
+  width: 100px;
+  animation-delay: 3s;
+}
+
+.berry:nth-child(5) {
+  top: 85%;
+  left: 45%;
+  width: 85px;
+  animation-delay: 1.5s;
+}
+
+/* Animación de flotación */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Desfase de movimiento */
+.berry:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.berry:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.berry:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.berry:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.berry:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+
+.img-sinopsis,
+.sinopsis {
+  position: relative;
+  z-index: 10;
 }
 
 .img-sinopsis img {
- width: 500px;           /* ajusta el tamaño de la imagen */
-  height: auto;                /* mantiene proporción */
-  border-radius: 15px;         /* bordes suaves */
+  width: 500px;
+  /* ajusta el tamaño de la imagen */
+  height: auto;
+  /* mantiene proporción */
+  border-radius: 15px;
+  /* bordes suaves */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 /* Texto */
 .sinopsis {
-   width: 500px;                  /* limita el ancho del texto */
+  width: 500px;
+  /* limita el ancho del texto */
   font-size: 16px;
   line-height: 1.6;
   font-family: 'Open Sans', sans-serif;
-  background: rgba(255, 255, 255, 0.425); /* blanco con transparencia */
+  background: rgba(255, 255, 255, 0.425);
+  /* blanco con transparencia */
   padding: 25px 30px;
   border-radius: 15px;
-  backdrop-filter: blur(8px); /* efecto de vidrio borroso */
+  backdrop-filter: blur(8px);
+  /* efecto de vidrio borroso */
   box-shadow: 0 0 15px rgba(207, 191, 191, 0.688);
   color: #ffffff;
+
 }
 
-.niveles{
-    height: 500px;
-    
-    padding: 20px 80px 80px 80px;
-    justify-content: center;
-    background-color: rgb(50, 49, 119, 0.927);
-    
+
+
+/* -----------------------------------------------------------------------------------------------------------------------*/
+.niveles {
+  height: auto;
+
+  padding: 40px 80px 80px 80px;
+  justify-content: center;
+  background-color: rgb(50, 49, 119, 0.927);
+
 }
 
 .card {
-   background: rgba(255, 255, 255, 0.425); /* fondo blanco transparente */
-  backdrop-filter: blur(6px);             /* efecto de vidrio borroso */
+  background: rgba(255, 255, 255, 0.425);
+  /* fondo blanco transparente */
+  backdrop-filter: blur(6px);
+  /* efecto de vidrio borroso */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   color: rgba(255, 255, 255, 0.651);
-  box-shadow: 0 0 25px rgba(91, 63, 196, 0.4); /* brillo morado suave */
+  box-shadow: 0 0 25px rgba(91, 63, 196, 0.4);
+  /* brillo morado suave */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin:10px; /* separa visualmente las tarjetas */
+  margin: 10px;
+  /* separa visualmente las tarjetas */
 }
-.card-img-top{
-   object-fit: cover; 
-   border-radius: 20px;
+
+.card-img-top {
+  object-fit: contain;
+  border-radius: 20px;
+  height: 20%;
 }
+
+/* personajes----------------------------------------------------------------------------------*/
+
+.personajes {
+  background-color: rgb(168, 83, 201);
+  height: 500px;
+  /* tamaño del degradado */
+  background: linear-gradient(to top, transparent, #25236ce0);
+  z-index: 1;    
+  text-align: center;
+  padding-top: 40px;
+}
+
+.personajes h1 {
+  padding-top: 40px;
+  text-align: center;
+
+  font-family: "Poppins", sans-serif;  /* ✔ letra moderna y clara */
+  font-weight: 700;
+  font-size: 35px;
+
+  color: #ffffff;  
+
+  background: #3e3c8de0;
+  padding: 15px 35px;
+  border-radius: 20px;
+
+  border: 2px solid rgba(127, 52, 208, 0.4); /* borde ligero */
+
+  /* BRILLO más sutil y bonito */
+  box-shadow:
+      0 0 8px rgba(125, 91, 205, 0.7),
+      0 0 18px rgba(140, 90, 255, 0.5);
+
+  /* sombra de texto suave para que NO pierda legibilidad */
+  text-shadow: 0 0 6px rgba(121, 19, 82, 0.6);
+
+  display: inline-block;
+}
+
+
+
+  /*------------------------------------------------- personakes */
+  .grid-personajes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*  2 columnas fijas */
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Cuando la pantalla se hace pequeña ↓ */
+@media (max-width: 700px) {
+  .grid-personajes {
+      grid-template-columns: 1fr;  /*  columna en celular */
+  }
+}
+
+.card2 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Hace que el modelo 3D se ajuste bien al card */
+model-viewer {
+    width: 100%;
+    height: 300px;
+    outline: none;
+} 
