@@ -316,14 +316,14 @@ ul li a.active {
 }
 
 .card2 {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(8px);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2); 
     text-align: center;
     font-size: 18px;
-    color: #fff;
+    color: #452087;
 }
 
 /* Hace que el modelo 3D se ajuste bien al card */
