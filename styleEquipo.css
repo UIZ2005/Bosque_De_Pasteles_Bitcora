@@ -115,7 +115,7 @@ ul li a.active {
 
 /* ----- TÍTULO PRINCIPAL ----- */
 .contenido h1 {
-    font-size: 38px;
+    font-size: 24px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
@@ -136,4 +136,63 @@ ul li a.active {
     line-height: 1.75;
     /* mejor legibilidad */
     text-align: justify;
+}
+.integrantes {
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 25px;
+
+    /* GRID 2x2 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+/* Tarjeta individual */
+.integrantes > div {
+    text-align: center;
+    width: 90%;
+    max-width:100%;
+    padding: 20px;
+
+    /* fondo individual */
+    background-color: rgba(255, 255, 255, 0.55);
+
+    /* bordes destacados */
+    border-radius: 15px;
+    border: 2px solid rgba(50, 49, 119, 0.25);
+
+    /* efecto de tarjeta flotante */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+    /* efecto de cristal */
+    backdrop-filter: blur(5px);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto bonito al pasar el mouse */
+.integrantes > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen responsive y estética */
+.integrantes img {
+    width: 80%;
+    height: 350px;
+    border-radius: 12px;
+    object-fit: cover; /* mantiene proporción sin deformarse */
+    margin-bottom: 15px;
+}
+
+/* Nombre */
+.integrantes h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #323177;
 }
