@@ -56,7 +56,7 @@ ul li a.active {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('img/bitacora.png');
+    background-image: url('img/equipo.png');
     /* ruta de la imagen */
     background-size: cover;
     background-position: 50% 80%;
