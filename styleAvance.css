@@ -82,7 +82,7 @@ ul li a.active {
 .contenido {
     width: 100%;
     padding: 30px 40px;
-    background-color: rgba(50, 49, 119, 0.927);
+    background-color: hwb(241 19% 53% / 0.927);
     backdrop-filter: blur(6px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     color: #180054;
@@ -114,7 +114,7 @@ ul li a.active {
 }
 
 /* ----- TÍTULO PRINCIPAL ----- */
-.introduccion h1 {
+.contenido h1 {
     font-size: 38px;
     font-weight: 700;
     text-align: center;
@@ -131,9 +131,68 @@ ul li a.active {
 
 
 /* ----- PÁRRAFO ----- */
-.introduccion p {
+.contenido p {
     font-size: 18px;
     line-height: 1.75;
     /* mejor legibilidad */
     text-align: justify;
+}
+
+/* --- Personalizar flechas del carrusel --- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;                /* ancho del botón */
+    height: 60px;               /* alto del botón */
+    border-radius: 50%;         /* círculo */
+    background-color: hwb(241 19% 53% / 0.927);  /* morado */
+    top: 50%;                   /* centrado vertical */
+    transform: translateY(-50%);
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+/* Hover más brillante */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #8a2be2;  /* morado más claro */
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Ajustar el ícono interno */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* vuelve el icono blanco */
+    width: 28px;
+    height: 28px;
+}
+
+/* ----- semana ------------------------------------------------------------------------------- */
+.semana {
+    max-width: 90%;
+    /* ancho ideal */
+    width: 90%;
+    /* que sea flexible */
+    margin: 30px 10px 10px 10px;
+    /* <---- ESTE CENTRA EL DIV */
+
+    padding: 30px 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins", sans-serif;
+}
+
+.carousel-item {
+    height: 400px;               /* ← ajusta a la altura que tú quieras */
+   
+}
+
+.carousel-item img,
+.carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;          /* recorta para que llene sin deformarse */
+    border-radius: 10px;        /* opcional */
 }
